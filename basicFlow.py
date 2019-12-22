@@ -5,7 +5,7 @@ import cv2
 import re
 import random
 
-IMAGES_DIR = './Resized_image'
+IMAGES_DIR = './dataset'
 LEARN = False
 
 
@@ -29,7 +29,7 @@ def network(labeled_images):
 
 
 def read_image(path):
-    return cv2.imread(path)
+    return cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 
 
 def get_labels(name):
