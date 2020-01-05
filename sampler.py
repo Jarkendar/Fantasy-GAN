@@ -2,6 +2,7 @@ import os
 import cv2
 
 DEFAULT_EXT = 'jpg'
+DATA_DIR = './Resized_image/'
 
 
 def read_image(path):
@@ -13,9 +14,9 @@ def save_img(img, name):
 
 
 def main():
-    for i, filePath in enumerate(os.listdir('./dataset')):
+    for i, filePath in enumerate(os.listdir(DATA_DIR)):
         if i % 10 == 0:
-            img = read_image('./dataset/' + filePath)
+            img = read_image(DATA_DIR + filePath)
             save_img(img, filePath)
 
 
