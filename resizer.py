@@ -4,7 +4,7 @@ from numpy import shape
 
 OUTPUT_DIR = './Resized_image'
 DEFAULT_EXT = 'jpg'
-RESIZED_SIZE = 256
+RESIZED_SIZE = 64
 
 
 def save_img(img, path, name='test', number=0, ext='jpg'):
@@ -32,6 +32,7 @@ def make_all(path):
             img = read_image(path + '/' + directory + '/' + imageName)
             cut_img = cut_side_column_img(img)
             smaller_img = resize_img(cut_img, RESIZED_SIZE)
+            smaller_img[smaller_img == 64] = 0
             save_img(smaller_img, OUTPUT_DIR, directory, i, DEFAULT_EXT)
 
 
